@@ -16,9 +16,8 @@ Module.register("MMM-eBarber", {
     },
 
     socketNotificationReceived: function(notification, payload) {
-        console.log(payload);
-        console.log(notification);
         if (notification === "API_RESULT_RECEIVED") {
+            console.log(payload);
             this.result = JSON.parse(payload);
             this.updateDom();
         }
@@ -27,6 +26,8 @@ Module.register("MMM-eBarber", {
     getDom: function() {
         var wrapper = document.createElement("div");
 
+        console.log("test => " + result)
+        
         if (this.result) {
             var resultText = document.createElement("p");
             resultText.textContent = "API Result: " + this.result.data; // Assuming 'data' is part of the response
