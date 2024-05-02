@@ -16,6 +16,8 @@ Module.register("MMM-eBarber", {
     },
 
     socketNotificationReceived: function(notification, payload) {
+        console.log(payload);
+        console.log(notification);
         if (notification === "API_RESULT_RECEIVED") {
             this.result = JSON.parse(payload);
             this.updateDom();
