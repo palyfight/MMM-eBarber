@@ -26,7 +26,7 @@ Module.register("MMM-eBarber", {
     getDom: function() {
         var wrapper = document.createElement("div");
 
-        console.log("test => " + result)
+        console.log("test => " + this.result)
         
         if (this.result) {
             var resultText = document.createElement("p");
