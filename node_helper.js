@@ -15,6 +15,9 @@ module.exports = NodeHelper.create({
             url: apiUrl,
             body: JSON.stringify({imagePath: imagePath})
         }, (error, response, body) => {
+            console.log(error)
+            console.log(response)
+            console.log(body)
             if (!error && response.statusCode == 200) {
                 this.sendSocketNotification("API_RESULT_RECEIVED", body);
             } else {
