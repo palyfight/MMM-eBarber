@@ -11,12 +11,14 @@ Module.register("MMM-eBarber", {
 
     notificationReceived: function(notification, payload, sender) {
         if (notification === "NEW_IMAGE_AVAILABLE") {
+            console.log("ONE")
             this.sendSocketNotification("SEND_IMAGE_TO_API", payload);
         }
     },
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === "API_RESULT_RECEIVED") {
+            console.log("Hello world!!!!!!!!")
             console.log(payload);
             this.result = JSON.parse(payload);
             this.updateDom();

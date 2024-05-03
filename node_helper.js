@@ -29,6 +29,8 @@ module.exports = NodeHelper.create({
     // Handle socket notifications
     socketNotificationReceived: function(notification, payload) {
         if (notification === "SEND_IMAGE_TO_API") {
+            console.log("TWO")
+            console.log(payload)
             this.sendImageToAPI(payload);
         }
     }
