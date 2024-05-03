@@ -9,7 +9,8 @@ Module.register("MMM-eBarber", {
     //     return ["bar.css"]; // Optional: include if you have custom styles
     // },
 
-    notificationReceived: function(notification, payload, sender) {
+    notificationReceived: function (notification, payload, sender) {
+        console.log("banANE")
         if (notification === "NEW_IMAGE_AVAILABLE") {
             console.log("ONE")
             this.sendSocketNotification("SEND_IMAGE_TO_API", payload);
